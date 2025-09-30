@@ -12,24 +12,25 @@ set termguicolors
 colorscheme evening "slate
 set mouse=a
 
-" ---- Custom Auto Complete ----
-inoremap { {<CR>}<Esc>ko<Tab>
-inoremap ( ()<Left>
-inoremap [ []<Left>
-inoremap " "\"<Left>
-inoremap ' ''<Left>
-inoremap <expr> ) getline('.')[col('.') - 1] == ')' ? "<Right>" : ")"
-inoremap <expr> ] getline('.')[col('.') - 1] == ']' ? "<Right>" : "]"
-inoremap <expr> } getline('.')[col('.') - 1] == '}' ? "<Right>" : "}"
+" ---- Enable autocomplete menu ----
+set completeopt=menuone,noselect
+set shortmess+=c
 
+" Optional: use Tab / Shift-Tab to cycle
+inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+
+"--- Plugins ---
+call plug#begin()
+Plug 'vim-scripts/AutoComplPop'
+Plug 'jiangmiao/auto-pairs'
+call plug#end()
 
 " Set cursor to a steady vertical bar when in Insert mode
 let &t_SI = "\033[5 q" " INSERT  |
 
 " Set cursor to a steady block when leaving Insert mode
 let &t_EI = "\033[2 q" " NORMAL  █
-
-
 
 "---- Status Line ----
 " Clear status line when vimrc is reloaded.
