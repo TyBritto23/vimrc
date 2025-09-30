@@ -11,10 +11,9 @@ set showmode
 set termguicolors
 colorscheme evening "slate
 set mouse=a
-
-" ---- Enable autocomplete menu ----
-set completeopt=menuone,noselect
-set shortmess+=c
+" Removes highlight after search
+nnoremap <leader>h :noh<cr>
+let mapleader = " "
 
 " Optional: use Tab / Shift-Tab to cycle
 inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -27,8 +26,8 @@ Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 "---- File Tree ----
-inoremap <c-b> <Esc>:Lex<cr>:vertical resize 30<cr>
-nnoremap <c-b> <Esc>:Lex<cr>:vertical resize 30<cr>
+inoremap <leader>b <Esc>:Lex<cr>:vertical resize 30<cr>
+nnoremap <leader>b <Esc>:Lex<cr>:vertical resize 30<cr>
 
 " Set cursor to a steady vertical bar when in Insert mode
 let &t_SI = "\033[5 q" " INSERT  |
@@ -51,7 +50,6 @@ set statusline+=\row:\ %l\ col:\ %c\ percent:\ %p%%
 
 
 "---- Tabs and Search ----
-
 " Converts tabs to spaces with length 4
 set expandtab
 set tabstop=4
@@ -67,14 +65,9 @@ set ignorecase
 set smartcase
 set showmatch
 
-set ruler
-set showcmd
-
 "Don't save backup files, using git
 set nobackup
 
-
-let mapleader = "<space>"
 "set clipboard=unnamedplus
 set autoread
 
