@@ -27,4 +27,5 @@
   - Then in General Settings and write `colorscheme gruvbox` and restart vim
 
 
-<img width="3022" height="1724" alt="image" src="https://github.com/user-attachments/assets/29ef3b50-d5f2-46d1-9dbf-cf5ffd57ee23" />
+[<img width="3020" height="1678" alt="image" src="https://github.com/user-attachments/assets/b458fff8-32f1-493f-8779-6876c9d188db" />]
+
