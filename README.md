@@ -13,11 +13,10 @@
 2. Auto indentation
 3. Open a file tree with space b
 4. Open terminal to the left with space t
-5. Source file with space s
-6. Cursor changes depending on which mode your in
-7. Gives functionality to the status bar
-8. Makes it easier to move between open windows using vim motions
-9. Makes searching through the file a bit cleaner
+5. Cursor changes depending on which mode your in
+6. Gives functionality to the status bar
+7. Makes it easier to move between open windows using vim motions
+98. Makes searching through the file a bit cleaner
 
 
 # Colorscheme
