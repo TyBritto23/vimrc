@@ -9,7 +9,6 @@ set laststatus=2
 set nowrap
 set showmode
 set termguicolors
-colorscheme evening "slate
 set mouse=a
 " Removes highlight after search
 nnoremap <leader>h :noh<cr>
@@ -25,6 +24,10 @@ call plug#begin()
 Plug 'vim-scripts/AutoComplPop'
 Plug 'jiangmiao/auto-pairs'
 call plug#end()
+
+" ---- Color Scheme ----
+colorscheme evening
+set bg=dark
 
 "---- File Tree ----
 inoremap <leader>b <Esc>:Lex<cr>:vertical resize 30<cr>
