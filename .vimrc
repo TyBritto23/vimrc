@@ -9,8 +9,19 @@ set laststatus=2
 set nowrap
 set showmode
 set termguicolors
-colorscheme evening
+colorscheme evening "slate
 set mouse=a
+
+" ---- Custom Auto Complete ----
+inoremap { {<CR>}<Esc>ko<Tab>
+inoremap ( ()<Left>
+inoremap [ []<Left>
+inoremap " "\"<Left>
+inoremap ' ''<Left>
+inoremap <expr> ) getline('.')[col('.') - 1] == ')' ? "<Right>" : ")"
+inoremap <expr> ] getline('.')[col('.') - 1] == ']' ? "<Right>" : "]"
+inoremap <expr> } getline('.')[col('.') - 1] == '}' ? "<Right>" : "}"
+
 
 " Set cursor to a steady vertical bar when in Insert mode
 let &t_SI = "\033[5 q" " INSERT  |
@@ -41,7 +52,7 @@ set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-filetype plugin indent on
+"filetype plugin indent on
 set autoindent
 
 " Makes searching through the file easier (Tip :e to open file tree and :e# to close file tree)
@@ -59,7 +70,7 @@ set nobackup
 
 
 let mapleader = "<space>"
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
 set autoread
 
 "---- Window Tiling ----
