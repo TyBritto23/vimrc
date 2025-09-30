@@ -24,3 +24,6 @@
   - Go to Plugins and write `Plug 'morhetz/gruvbox'`
   - Do `:PlugInstall` and `:PlugUpdate`
   - Then in General Settings and write `colorscheme gruvbox` and restart vim
+
+
+<img width="3022" height="1724" alt="image" src="https://github.com/user-attachments/assets/29ef3b50-d5f2-46d1-9dbf-cf5ffd57ee23" />
