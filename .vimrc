@@ -26,6 +26,10 @@ Plug 'vim-scripts/AutoComplPop'
 Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
+"---- File Tree ----
+inoremap <c-b> <Esc>:Lex<cr>:vertical resize 30<cr>
+nnoremap <c-b> <Esc>:Lex<cr>:vertical resize 30<cr>
+
 " Set cursor to a steady vertical bar when in Insert mode
 let &t_SI = "\033[5 q" " INSERT  |
 
