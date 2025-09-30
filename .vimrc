@@ -1,6 +1,7 @@
 set nocompatible
 
 "---- General Settings ----
+let mapleader = " "
 set number
 syntax on
 filetype on
@@ -10,10 +11,12 @@ set nowrap
 set showmode
 set termguicolors
 set mouse=a
+set showmatch
+set cursorline
 " Removes highlight after search
 nnoremap <leader>h :noh<cr>
-nnoremap <leader>t :vert term<cr>
-let mapleader = " "
+" Opens terminal on the left side of the screen
+nnoremap <leader>t <Esc>:vert term<cr>
 
 " Optional: use Tab / Shift-Tab to cycle
 inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -23,10 +26,11 @@ inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 call plug#begin()
 Plug 'vim-scripts/AutoComplPop'
 Plug 'jiangmiao/auto-pairs'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 " ---- Color Scheme ----
-colorscheme evening
+colorscheme gruvbox
 set bg=dark
 
 "---- File Tree ----
@@ -40,17 +44,53 @@ let &t_SI = "\033[5 q" " INSERT  |
 let &t_EI = "\033[2 q" " NORMAL  █
 
 "---- Status Line ----
-" Clear status line when vimrc is reloaded.
-set statusline=
+set laststatus=2
 
-" Status line left side.
-set statusline+=\ %F\ %Y\ %R\ %M
+function! GitBranch()
+    let branch = system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+    return strlen(branch) > 0 ? branch : ''
+endfunction
 
-" Use a divider to separate the left side from the right side.
-set statusline+=%=
+augroup GitStatusline
+    autocmd!
+    autocmd BufEnter,BufWritePost,DirChanged * let b:git_branch = GitBranch()
+augroup END
 
-" Status line right side.
-set statusline+=\row:\ %l\ col:\ %c\ percent:\ %p%%
+function! ShowGitBranch()
+    return get(b:, 'git_branch', '') != '' ? ''.b:git_branch.' ' : ''
+endfunction
+
+function! Mode()
+    let mode_char = mode()
+    if mode_char ==# 'n'
+        return 'NORMAL'
+    elseif mode_char ==# 'v'
+        return 'VISUAL'
+    elseif mode_char ==# 'V'
+        return 'V-LINE'
+    elseif mode_char ==# "\<C-V>"
+        return 'V-BLOCK'
+    elseif mode_char ==# 'i'
+        return 'INSERT'
+    elseif mode_char ==# 'R'
+        return 'REPLACE'
+    elseif mode_char ==# 'c'
+        return 'COMMAND'
+    elseif mode_char ==# 's'
+        return 'SELECT'
+    elseif mode_char ==# 'S'
+        return 'S-LINE'
+    elseif mode_char ==# "\<C-S>"
+        return 'S-BLOCK'
+    elseif mode_char ==# 't'
+        return 'TERMINAL'
+    else
+        return '???'
+    endif
+endfunction
+
+set statusline=\ %{Mode()}\ %{ShowGitBranch()}\ %F%m%h%R\ %=\row:\ %l\ col:\ %c\ Percent:\ %p%%
+
 
 
 "---- Tabs and Search ----
@@ -80,5 +120,3 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-
-
