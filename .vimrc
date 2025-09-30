@@ -13,6 +13,7 @@ colorscheme evening "slate
 set mouse=a
 " Removes highlight after search
 nnoremap <leader>h :noh<cr>
+nnoremap <leader>t :vert term<cr>
 let mapleader = " "
 
 " Optional: use Tab / Shift-Tab to cycle
