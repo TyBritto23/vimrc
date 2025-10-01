@@ -24,9 +24,9 @@
 # Colorscheme
 - Find a colorscheme you like and either use `colorscheme name` (this works for native colorschemes already installed for vim)
 - Or find one online, example gruvbox [https://github.com/morhetz/gruvbox]
-  - Go to Plugins and write `Plug 'morhetz/gruvbox'`
-  - Do `:PlugInstall` and `:PlugUpdate`
-  - Then in General Settings and write `colorscheme gruvbox` and restart vim
+- Go to Plugins and write `Plug 'morhetz/gruvbox'`
+- Then in the colorscheme section write `colorscheme gruvbox` 
+- Do `:PlugInstall` and `:PlugUpdate` and restart vim
 
 
 <img width="3020" height="1678" alt="image" src="https://github.com/user-attachments/assets/b458fff8-32f1-493f-8779-6876c9d188db" />
