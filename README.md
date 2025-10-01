@@ -1,25 +1,25 @@
 # Steps
 1. Make sure your `~/.vimrc` file matches with this one
 2. run `curl -fLo ~/.vim/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim` within your terminal
-3. Go into the .vimrc and in normal mode type `:PlugInstall`
+3. Go into the .vimrc and in normal mode type `:PlugInstall` and `"PlugUpdate`
 4. Restart vim to see changes 
 
-
+# Troubleshooting
+- If you don't want to deal with plugins skip steps 2 and 3 and delete or comment out the plugins section (line 25) in the `.vimrc` file
 - If step 2 isn't working go to [https://github.com/junegunn/vim-plug/blob/master/plug.vim] and paste that code into `~/.vim/autoload/plug.vim` (you will need to make the `plug.vim` file)
 - You could also copy and paste this `.vimrc` file into your own if codespaces is giving you trouble
-- If you don't want to deal with plugins skip steps 2 and 3 and delete or comment out the plugins section (line 25) in the `.vimrc` file
 
 # Features
-1. Auto Complete (plugin)
+1. Auto complete (plugin)
 2. Auto indentation (plugin)
-3. Auto Pairs for things like (), [], {}, "", and ''. (plugin)
-4. Open a file tree with space b
-5. Open terminal to the left with space t
-6. Cursor changes depending on which mode your in
-7. Gives functionality to the status bar
-8. Makes it easier to move between open windows using vim motions
-98. Makes searching through the file a bit cleaner
-
+3. Auto pairs for things like (), [], {}, "", and ''. (plugin)
+4. Comment out code in normal and visual mode with space+/ (plugin)
+5. Switch between windows with shift + {h,j,k,l}
+6. Open a file tree with space b
+7. Open terminal to the left with space t
+8. Cursor changes depending on which mode your in
+9. Gives functionality to the status bar
+10. Makes searching through the file a bit cleaner
 
 # Colorscheme
 - Find a colorscheme you like and either use `colorscheme name` (this works for native colorschemes already installed for vim)
