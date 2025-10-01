@@ -123,13 +123,13 @@ set nobackup
 set autoread
 
 "---- Window Tiling ----
-nnoremap <S-h> <C-w>h
-nnoremap <S-j> <C-w>j
-nnoremap <S-k> <C-w>k
-nnoremap <S-l> <C-w>l
+nnoremap <c-h> <C-w>h
+nnoremap <c-j> <C-w>j
+nnoremap <c-k> <C-w>k
+nnoremap <c-l> <C-w>l
 
 " Switch to the window on the right from within the terminal
-tnoremap <S-l> <C-w>l
+tnoremap <c-l> <C-w>l
 
 
 
