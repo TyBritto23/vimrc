@@ -14,7 +14,7 @@
 2. Auto indentation (plugin)
 3. Auto pairs for things like (), [], {}, "", and ''. (plugin)
 4. Comment out code in normal and visual mode with space+/ (plugin)
-5. Switch between windows with shift + {h,j,k,l}
+5. Switch between windows with control + {h,j,k,l}
 6. Open a file tree with space b
 7. Open terminal to the left with space t
 8. Cursor changes depending on which mode your in
