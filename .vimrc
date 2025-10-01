@@ -18,7 +18,7 @@ nnoremap <leader>h :noh<cr>
 " Opens terminal on the left side of the screen
 nnoremap <leader>t <Esc>:vert term<cr>
 
-" Optional: use Tab / Shift-Tab to cycle
+"Use Tab / Shift-Tab to cycle
 inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
@@ -27,14 +27,19 @@ call plug#begin()
 Plug 'vim-scripts/AutoComplPop'
 Plug 'jiangmiao/auto-pairs'
 Plug 'morhetz/gruvbox'
+Plug 'tpope/vim-commentary'
 call plug#end()
+
+" ---- Comments ----
+" Map space+/ to the toggle command
+nmap <leader>/ gcc
+vmap <leader>/ gc
 
 " ---- Color Scheme ----
 colorscheme gruvbox
 set bg=dark
 
 "---- File Tree ----
-inoremap <leader>b <Esc>:Lex<cr>:vertical resize 30<cr>
 nnoremap <leader>b <Esc>:Lex<cr>:vertical resize 30<cr>
 
 " Set cursor to a steady vertical bar when in Insert mode
@@ -116,7 +121,10 @@ set nobackup
 set autoread
 
 "---- Window Tiling ----
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap <S-h> <C-w>h
+nnoremap <S-j> <C-w>j
+nnoremap <S-k> <C-w>k
+nnoremap <S-l> <C-w>l
+
+" Switch to the window on the right from within the terminal Shift+l
+tnoremap <S-l> <C-w>l
