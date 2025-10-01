@@ -22,7 +22,7 @@ nnoremap <leader>t <Esc>:vert term<cr>
 inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
-"--- Plugins ---
+"--- Plugins Start ---
 call plug#begin()
 Plug 'vim-scripts/AutoComplPop'
 Plug 'jiangmiao/auto-pairs'
@@ -31,13 +31,15 @@ Plug 'tpope/vim-commentary'
 call plug#end()
 
 " ---- Comments ----
-" Map space+/ to the toggle command
+" Map Space+/ to the toggle command
 nmap <leader>/ gcc
 vmap <leader>/ gc
 
 " ---- Color Scheme ----
-colorscheme gruvbox
+colorscheme gruvbox "gruvbox is a plugin, colorscheme is not
 set bg=dark
+
+" ---- Plugins End ----
 
 "---- File Tree ----
 nnoremap <leader>b <Esc>:Lex<cr>:vertical resize 30<cr>
@@ -126,5 +128,8 @@ nnoremap <S-j> <C-w>j
 nnoremap <S-k> <C-w>k
 nnoremap <S-l> <C-w>l
 
-" Switch to the window on the right from within the terminal Shift+l
+" Switch to the window on the right from within the terminal
 tnoremap <S-l> <C-w>l
+
+
+
