@@ -7,11 +7,12 @@
 
 - If step 2 isn't working go to [https://github.com/junegunn/vim-plug/blob/master/plug.vim] and paste that code into `~/.vim/autoload/plug.vim` (you will need to make the `plug.vim` file)
 - You could also copy and paste this `.vimrc` file into your own if codespaces is giving you trouble
+- If you don't want to deal with plugins skip steps 2 and 3 and delete or comment out the plugins section (line 25) in the `.vimrc` file
 
 # Features
-1. Auto Complete
-2. Auto indentation
-3. Auto Pairs for things like (), [], {}, "", and ''.
+1. Auto Complete (plugin)
+2. Auto indentation (plugin)
+3. Auto Pairs for things like (), [], {}, "", and ''. (plugin)
 4. Open a file tree with space b
 5. Open terminal to the left with space t
 6. Cursor changes depending on which mode your in
